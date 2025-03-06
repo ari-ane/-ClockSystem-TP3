@@ -16,10 +16,6 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      
     env:
       DISPLAY: ":99.0" #Set a display for Xvfb
       
@@ -28,6 +24,12 @@ jobs:
       image: selenium/standalone-chrome:latest
         options:-e VNC_SERVER=true-e VNC_PORT=5900
         
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      
+    
    
     steps:
     - uses: actions/checkout@v4
