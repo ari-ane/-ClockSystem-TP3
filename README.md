@@ -1,6 +1,8 @@
 # ClockSystem
 [![Gradle Build](https://github.com/ari-ane/-ClockSystem-TP3/actions/workflows/gradle.yml/badge.svg)](https://github.com/ari-ane/-ClockSystem-TP3/actions/workflows/gradle.yml)
 [![PMD Workflow](https://github.com/ari-ane/-ClockSystem-TP3/actions/workflows/pmd.yml/badge.svg)](https://github.com/ari-ane/-ClockSystem-TP3/actions/workflows/pmd.yml)
+[![CodeQL Analysis](https://github.com/ari-ane/-ClockSystem-TP3/actions/workflows/codeql.yml/badge.svg)](https://github.com/ari-ane/-ClockSystem-TP3/actions/workflows/codeql.yml)
+
 
 
 
