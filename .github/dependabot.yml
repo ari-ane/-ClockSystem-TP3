@@ -1,0 +1,13 @@
+version: 2
+updates:
+  # Mise à jour des dépendances Gradle
+  - package-ecosystem: "gradle"
+    directory: "/"        # Emplacement de vos fichiers build.gradle
+    schedule:
+      interval: "weekly"  # Vous pouvez choisir daily, weekly ou monthly
+
+  # Mise à jour des dépendances des workflows GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"  # Emplacement de vos workflows
+    schedule:
+      interval: "weekly"
