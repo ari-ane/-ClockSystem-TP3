@@ -26,16 +26,17 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       
-      - name: Run PMD
-        uses: axians/mk-pmd-action@v3.0.0
+
+      - uses: pmd/pmd-github-action@v2
+        id: pmd
         with:
-          version: '6.55.0'              # Version de PMD à utiliser
-          rulesets: 'java-basic'         # Règles PMD
-          sourcePath: 'src/main/java'    # Dossier où se trouve votre code
-          failThreshold: 5               # Seuil d'échec (5 violations)
-          failOnError: true              # Fait échouer le job si le seuil est dépassé
-          sarifOutputFile: 'pmd-report.sarif'
-      
+          version: '6.55.0'
+          sourcePath: 'src/main/java'
+          rulesets: 'rulesets/java/quickstart.xml,ruleset.xml'
+      - name: Fail build if there are violations
+        if: steps.pmd.outputs.violations != 0
+        run: exit 1
+          
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
         with:
